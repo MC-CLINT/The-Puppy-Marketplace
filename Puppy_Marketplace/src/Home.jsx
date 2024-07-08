@@ -1,4 +1,4 @@
-import React from 'react';
+
 import lineImage from './assets/Line.png';
 import homeImage from './assets/home.png';
 import botImage from './assets/bot.png';
@@ -56,4 +56,3 @@ function Home() {
 }
 
 export default Home;
-
