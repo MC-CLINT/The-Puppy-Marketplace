@@ -1,10 +1,13 @@
-import Home from './Home.jsx'
-import './index.css'
+import React from 'react';
+import Home from './Home.jsx';
+
 
 function App() {
- return(
-<Home></Home>
- );
+  return (
+   <>
+   <Home></Home>
+   </>
+  );
 }
 
-export default App
+export default App;

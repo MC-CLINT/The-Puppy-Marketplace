@@ -55,6 +55,19 @@ const CustomSlide = () => {
             </div>
             <div className="each-slide-effect">
                 <div style={{ 'backgroundImage': `url(${images[3]})` }}>
+                    <div class='slide4-paragraphs'>
+
+                        <div class='slide4-paragraph1'>
+                        <p><span class='empoweringPaws'>EMPOWERING PAWS:</span>Nurturing Canine Potential Through Training Unleashing The Bond Between Humans and Their Furry Companions</p>
+                        </div>
+
+                        <div class='slide4-paragraph2'>
+                        <img className='Slide4-LineImage' src={lineImage} />
+                         <p>Find the perfect dog trainer on our website and strengthen your bond with your canine companion. Our skilled trainers use positive reinforcement to teach obedience and enhance your dog's happiness.</p>
+                         <img className='Slide4-LineImage2' src={lineImage} />
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </Slide>
