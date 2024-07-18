@@ -57,7 +57,19 @@ app.post('/api/dogData',(req,res)=>{
     res.status(201).json(new_dog_Data)
  
 })
-
+app.delete('/delete/:id',(req,res)=>{
+    const dogId=req.params.id
+    const searchDog_id=dogData.findIndex((a_dog)=>a_dog.id==id)
+    if(searchDog_id>-1){
+        dogData.splice(searchDog_id,1)
+        res.sendStatus(200);
+    }else{
+        res.status(404);
+        res.json({error:`message with id ${messageId} was not found, no message ${id} exists`})
+    }
+}
+    
+)
 let messagingData=[
     {
         messageId:1,
