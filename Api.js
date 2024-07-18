@@ -37,13 +37,13 @@ app.use(bodyParser.json());
 //which is subject to change and get more complex
 
 //This is to get all posts
-app.get("/dogData",(req,res)=>{
+app.get("/api/dogData",(req,res)=>{
     console.log(dogData)
     res.json(dogData)
 })
 
 //create listing
-app.post('/dogData',(req,res)=>{
+app.post('/api/dogData',(req,res)=>{
     const newID=lastId+=1;
     const  new_dog_Data={
         id: newID,
@@ -86,6 +86,19 @@ app.post('/message',(req,res)=>{
     lastMessage_Id=newId
     messagingData.push(new_messaging_Data)
     res.status(201).json(new_messaging_Data)
+})
+// end-point to delete a particular message
+app.delete('/message/:id',(req,res)=>{
+    const messageId=req.params.id;
+    console.log(messageId)
+    const searchId=messagingData.findIndex((message)=>message.id==messageId)
+    if(searchId>-1){
+        messagingData.splice(searchId,1);
+        res.sendStatus(200)
+    }else{
+        res.status(404);
+        res.json({error:`message with id ${messageId} was not found, no message ${id} exists`})
+    }
 })
 
 app.listen(Port,()=>{
