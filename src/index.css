@@ -2,8 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .form {
-    @apply border-2 border-main p-2 rounded-lg lg:w-[400px] font-bold lg:mt-4 mt-2;
-  }
-}
