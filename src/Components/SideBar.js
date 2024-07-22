@@ -15,7 +15,7 @@ export default function SideBar() {
           <Sidebar.Item href="Analytics" icon={HiViewBoards}>
             Analytics
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiInbox}>
+          <Sidebar.Item href="Inbox" icon={HiInbox}>
             Inbox
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiUser}>

@@ -9,6 +9,7 @@ import Forms from './Components/Forms';
 import SideBar from './Components/SideBar';
 import Nav from './Components/Navbar';
 import Analytics from './Components/Analytics';
+import Inbox from './Components/Inbox'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
               <Route path="Settings" element={<Settings />} />
               <Route path="Customization" element={<Customization />} />
               <Route path="LogOut" element={<Forms />} />
+              <Route path = 'Inbox' element  = {<Inbox/>}/>
             </Routes>
           </div>
         </div>
