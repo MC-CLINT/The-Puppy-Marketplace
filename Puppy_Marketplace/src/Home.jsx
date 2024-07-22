@@ -1,4 +1,3 @@
-import React from 'react';
 import lineImage from './assets/Line.png';
 import homeImage from './assets/home.png';
 import botImage from './assets/bot.png';
@@ -10,6 +9,7 @@ import Line5 from './assets/Line 5.png';
 import SearchImage from './assets/search.png';
 import CustomSlide from './Slide'; 
 import 'react-slideshow-image/dist/styles.css';
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -42,10 +42,15 @@ function Home() {
                 <p className='PuppyMarketplace'>PUPPY MARKETPLACE</p>
                 <input type='search' className='searchBox' placeholder='Search...' />
                 <button className='searchButton'><img className='SearchImage' src={SearchImage} /></button>
-                <img className='UserImage' src={UserImage} />
-                <p className='SignIn'>Sign In</p>
-                <img className='Line5' src={Line5} />
-                <p className='Register'>Register</p>
+                <Link to = 'login'>
+                    <img className='UserImage' src={UserImage} />
+                    <p className='SignIn'>Sign In</p>
+                </Link>
+                <Link to = 'signup'>
+                    <img className='Line5' src={Line5} />
+                    <p className='Register'>Register</p>
+                </Link>
+
             </div>
 
             
