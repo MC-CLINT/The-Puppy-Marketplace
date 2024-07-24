@@ -43,11 +43,13 @@ function Home() {
                 <input type='search' className='searchBox' placeholder='Search...' />
                 <button className='searchButton'><img className='SearchImage' src={SearchImage} /></button>
                 <Link to = 'login'>
-                    <img className='UserImage' src={UserImage} />
+                <img className='UserImage' src={UserImage} />
+                </Link>
+                <Link to = 'login'>
                     <p className='SignIn'>Sign In</p>
                 </Link>
+                <img className='Line5' src={Line5} />
                 <Link to = 'signup'>
-                    <img className='Line5' src={Line5} />
                     <p className='Register'>Register</p>
                 </Link>
 
