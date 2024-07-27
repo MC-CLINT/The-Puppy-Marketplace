@@ -1,26 +1,19 @@
 "use client";
-import Logo from '../Assets/Logo 2.png';
+import Logo from '../Assets/logo.png';
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { RiNotification4Line } from "react-icons/ri";
 import { TiMessages } from "react-icons/ti";
 
 export default function Nav() {
   return (
-    <Navbar fluid rounded className="border border-lg mb-9 w-auto">
-      <Navbar.Brand className='w-auto'>
-        <img src={Logo} alt="logo" className="w-10 h-10" />
-        <span className="font-bold">Puppy Market</span>
-        <div className="px-4 py-3   w-auto">
-          <input 
-            type="search" 
-            className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-            placeholder="Search..." 
-          />
-        </div>
+    <Navbar fluid rounded className="border border-lg mb-9 w-auto " style={{backgroundColor:'#15415C'}}>
+      <Navbar.Brand className='w-auto '>
+        <img src={Logo} alt="logo" className="w-5 h-5" />
+        <span className="font-bold text-white">Puppy Market</span>
       </Navbar.Brand>
       <div className="flex items-center space-x-4">
-        <RiNotification4Line className="w-7 h-7" />
-        <TiMessages className="w-7 h-7" />
+        <RiNotification4Line className="w-7 h-7 text-white" />
+        <TiMessages className="w-7 h-7 text-white" />
         <Dropdown
           arrowIcon={false}
           inline
