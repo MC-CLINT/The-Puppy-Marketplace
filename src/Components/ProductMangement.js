@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import {dogsData} from "./Data"; // Ensure this matches your export
+import React, {  useEffect, useContext } from 'react';
+import { AppContext } from '../App';
 
 const LOCAL_STORAGE_KEY = 'dogsData';
 
 const ProductManagement = () => {
-  // Load data from local storage or use default data
-  const [accounts, setAccounts] = useState(() => {
-    const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-    return savedData ? JSON.parse(savedData) : dogsData;
-  });
+  const { animals, setAnimals } = useContext(AppContext);
 
-  // Save data to local storage whenever accounts change
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(accounts));
-  }, [accounts]);
+    const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (savedData) {
+      setAnimals(JSON.parse(savedData));
+    }
+  }, [setAnimals]);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(animals));
+  }, [animals]);
 
   const deleteDog = (sellerId) => {
-    const updatedAccounts = accounts.filter(dog => dog.sellerId !== sellerId);
-    setAccounts(updatedAccounts);
+    const updatedAnimals = animals.filter(dog => dog.sellerId !== sellerId);
+    
+    setAnimals(updatedAnimals);
   };
 
   return (
@@ -38,7 +41,7 @@ const ProductManagement = () => {
               Gender
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Seller ID
+              ProuctId
             </th>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Color
@@ -55,10 +58,9 @@ const ProductManagement = () => {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {accounts.map(dog => (
+          {animals.map(dog => (
             <TableRow key={dog.sellerId} {...dog} deleteDog={deleteDog} />
           ))}
-
           <tr>
             <td colSpan="9" className="px-6 py-4 whitespace-nowrap text-center">
               <a href="AddNewListing" className="block">
@@ -68,7 +70,6 @@ const ProductManagement = () => {
               </a>
             </td>
           </tr>
-          
         </tbody>
       </table>
     </div>

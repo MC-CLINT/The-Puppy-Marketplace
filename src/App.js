@@ -14,11 +14,26 @@ import Dashboard from './Components/Dashboard'
 import ProductManagement from './Components/ProductMangement';
 import Ordertable from './Components/OrderManagement';
 import AddNewListing from './Components/AddNewListing';
+import {useState, createContext} from 'react';
+import { users } from './Components/Data';
+import { dogsData } from './Components/Data';
+import AddNewUser from './Components/AddNewUser';
+
+
+
+export const AppContext = createContext();
+
+
 export default function App() {
+  const [accounts, setAccounts] = useState(users);
+  const [animals, setAnimals] = useState(dogsData);
+
   return (
-    <BrowserRouter>
+    <BrowserRouter >
+      <AppContext.Provider value={ {accounts, setAccounts,animals, setAnimals}}>
+
       <div className="relative">
-        <Nav />
+        <Nav/>
         <div className="flex">
           <SideBar />
           <div className="ml-4 flex-grow w-full">
@@ -35,11 +50,14 @@ export default function App() {
               <Route path = 'ProductManagement' element = {<ProductManagement/>}/>
               <Route path = 'OrderManagement' element = {<Ordertable/>}/>
               <Route path = 'AddNewListing' element ={<AddNewListing/>}/>
+              <Route path = 'AddNewUser' element = {<AddNewUser/>}/>
+
               
             </Routes>
           </div>
         </div>
       </div>
+      </AppContext.Provider>
     </BrowserRouter>
   );
 }

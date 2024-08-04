@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
-import { users } from "../Components/Data";
+import React, {  useEffect, useContext } from 'react';
+import { AppContext } from '../App';
 import { Link } from 'react-router-dom';
 
+const LOCAL_STORAGE_KEY = 'accountsData';
+
 const UsersTable = () => {
-  const [accounts, setAccounts] = useState(users);
+  const { accounts, setAccounts } = useContext(AppContext);
+
+  // Load data from local storage or use default data
+  useEffect(() => {
+    const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (savedData) {
+      setAccounts(JSON.parse(savedData));
+    }
+  }, [setAccounts]);
+
+  // Save data to local storage whenever accounts change
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(accounts));
+  }, [accounts]);
 
   const deleteUser = (userId) => {
     setAccounts(accounts.filter(user => user.userId !== userId));
@@ -49,11 +64,11 @@ const UsersTable = () => {
           ))}
           <tr>
             <td colSpan="9" className="px-6 py-4 whitespace-nowrap text-center">
-              <a href="AddNewListing" className="block">
+              <Link to="" className="block">
                 <button className="w-full bg-green-600 text-white rounded-lg py-2 px-4">
                   Add New User
                 </button>
-              </a>
+              </Link>
             </td>
           </tr>
         </tbody>
