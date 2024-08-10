@@ -1,7 +1,11 @@
 import logo32 from '../assets/logo3 2.png'
 import dog from '../assets/Colorful Beagle 1.png'
+import { Link } from 'react-router-dom'
+
 "use client";
-export default function LogIn() {
+
+
+export default function SignUp() {
   return (
 
       <div className="flex flex-row  ">
@@ -80,6 +84,9 @@ import EmailIcon from '../assets/mail.png'
 import PhoneIcon from '../assets/voicemail.png'
 import EyeIcon from '../assets/eye-off.png'
 import CheckIcon from '../assets/check-circle.png'
+
+
+
 
 
 
@@ -170,7 +177,10 @@ export function Component() {
         </div>
       </div>
       <div className="flex justify-center">
-        <Button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl flex items-center justify-center" type="submit">Sign Up</Button>
+      <Link to = 'verify-email'>
+      <Button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl flex items-center justify-center" type="submit">Sign Up</Button>
+      </Link>
+        
       </div>
       <div>
         <p className="text-center ">----------- or continue with -----------</p>
