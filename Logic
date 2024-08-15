@@ -1,0 +1,57 @@
+### Authentication Endpoints
+
+- **Register**: `POST /api/register`
+- Request: `{ "email": "string", "password": "string" }`
+- Response: `{ "message": "string" }`
+- **Login**: `POST /api/login`
+- Request: `{ "email": "string", "password": "string" }`
+- Response: `{ "token": "string" }`
+### Puppy Listings Endpoints
+
+- **Get All Listings**: `GET /api/puppies`
+- Response: `[ { "id": "string", "breed": "string", "price": "number", "images": ["string"],
+"description": "string" } ]`
+- **Create Listing**: `POST /api/puppies`
+- Request: `{ "breed": "string", "age": "number", "price": "number", "description": "string",
+"images": ["string"] }`
+- Response: `{ "id": "string" }`
+  
+### Messaging Endpoints
+- **Send Message**: `POST /api/messages`
+- Request: `{ "senderId": "string", "receiverId": "string", "content": "string" }`
+- Response: `{ "id": "string" }`
+- **Get Messages**: `GET /api/messages`
+- Request: `{ "conversationId": "string" }`
+- Response: `[ { "id": "string", "senderId": "string", "content": "string", "timestamp": "string" }
+]`
+
+
+
+** things to remind myself
+authentication would be in the same Api.js file don't complicate think simple and logical
+
+# Logic for Authentications 
+
+## TODO's
+
+* Set Up Environment:
+
+    Install required libraries.(bycrypt, passport, oAuth)
+    Configure environment variables.
+
+* Set Up Server and Database:
+
+    Set up Express server.
+    Configure database connection.
+    Define Database Schema:
+
+    Add role column to users table.
+* Implement Admin Registration and Login:
+
+* Implement local strategy for admin registration.
+    Implement local strategy for admin login.
+I   mplement Google OAuth strategy for admin login.
+    Protect Routes:
+
+Create middleware for authentication and authorization.
+Protect admin routes using middleware.
