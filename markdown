@@ -1,5 +1,7 @@
 # Puppy Marketplace Database Documentation
-
+This documentation provides a comprehensive overview of your Puppy Marketplace database structure, 
+including table schemas, relationships, and important considerations for maintenance and security. 
+It's designed to be a reference for database administrators and developers working on this project.
 ## Database Overview
 
 Name: PuppyMarketPlace
