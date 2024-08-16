@@ -50,7 +50,7 @@ authentication would be in the same Api.js file don't complicate think simple an
 
 * Implement local strategy for admin registration.
     Implement local strategy for admin login.
-I   mplement Google OAuth strategy for admin login.
+      Implement Google OAuth strategy for admin login.
     Protect Routes:
 
 Create middleware for authentication and authorization.
