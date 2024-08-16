@@ -75,4 +75,3 @@ const CustomSlide = () => {
 };
 
 export default CustomSlide;
-
