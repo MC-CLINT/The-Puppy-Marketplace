@@ -1,4 +1,3 @@
-import React from 'react';
 import checkImage from '../assets/checkImage.png';
 
 function Verified() {
