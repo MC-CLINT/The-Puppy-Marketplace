@@ -178,7 +178,7 @@ export function Component() {
       </div>
       <div className="flex justify-center">
       <Link to = 'verify-email'>
-      <Button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl flex items-center justify-center" type="submit">Sign Up</Button>
+      <Button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl flex hover:bg-gray-700 items-center justify-center" type="submit">Sign Up</Button>
       </Link>
         
       </div>

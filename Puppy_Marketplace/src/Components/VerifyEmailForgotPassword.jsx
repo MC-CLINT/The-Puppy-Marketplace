@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 
-function VerifyEmail() {
+function VerifyEmailForgotPassword () {
   
   return (
     <div className="flex justify-center items-center h-screen bg-gray-50">
@@ -16,7 +16,7 @@ function VerifyEmail() {
           <img src={EmailOpen} alt="Email Icon" className="w-24 h-24 absolute top-1/6 left-1/6" />
         </div>
         {/* Title */}
-        <h2 className="text-xl font-bold text-black">Verify your email to continue</h2>
+        <h2 className="text-xl font-bold text-black">Enter Verification Code</h2>
         <p className="text-black mt-2">Please Enter The 4-digit Code Sent To</p>
         <p className="text-black font-medium mb-4">mymail@example.com</p>
 
@@ -51,7 +51,7 @@ function VerifyEmail() {
 
         {/* Verify Button */}
 
-        <Link to = 'verified'>
+        <Link to = 'create-new-password'>
         <button
          className="w-32 mt-4 bg-sky-900 text-white py-2 px-6 rounded-2xl hover:bg-gray-700">
           Verify
@@ -63,4 +63,4 @@ function VerifyEmail() {
   );
 }
 
-export default VerifyEmail;
+export default VerifyEmailForgotPassword;

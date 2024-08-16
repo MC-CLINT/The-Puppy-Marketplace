@@ -1,6 +1,9 @@
 import logo32 from '../assets/logo3 2.png'
 import dog from '../assets/Colorful Beagle 1.png'
+import { Link } from 'react-router-dom'
 "use client";
+
+
 export default function LogIn() {
   return (
 
@@ -107,13 +110,15 @@ export function Component() {
           <img className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400 h-6 w-6"  src={lock}/>
         </div>
         <div className="flex justify-end mb-6">
+        <Link to = 'forgot-password'>
         <p className="text-xs font-normal">Forgot Password ?</p>
+        </Link>
         </div>
         
       </div>
 
       <div className="flex justify-center">
-        <Button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl flex items-center justify-center" type="submit">Log In</Button>
+        <Button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl hover:bg-gray-700 flex items-center justify-center" type="submit">Log In</Button>
       </div>
       <div>
         <p className="text-center">----------- or continue with -----------</p>

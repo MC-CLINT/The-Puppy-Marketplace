@@ -15,7 +15,7 @@
   flex-direction: row;
   justify-content:space-around;
   background-color:#15415C;
-  height: 73px;
+  height: 53px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   align-items: center;
@@ -335,10 +335,11 @@ margin-right: -40px;
   flex-direction: row;
   justify-content:space-around;
   background-color: bisque;
-  height: 73px;
+  height: 53px;
   align-items: center;
   width: auto;
   margin-top: 73px;
+  margin-top:53px;
 }
 @media screen and (max-width:500px)  {
   .Nav-2{
@@ -352,6 +353,7 @@ margin-right: -40px;
 .Logo2{
   margin-left: -5px;
   margin-right: 10px;
+  height: 60px;
 }
 @media screen and (max-width:500px)  {
   .Logo2{
@@ -366,7 +368,7 @@ margin-right: -40px;
   height: 60px;
   width: 180px;
   font-weight: 700px;
-  font-size:30px;
+  font-size:25px;
   color: #15415C;
   font-weight:bolder;
   line-height:30px;
@@ -380,7 +382,7 @@ margin-right: -40px;
 }
 .searchBox{
   width:500px;
-  height: 50px;
+  height: 40px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   border: 2px solid #15415C;
@@ -392,7 +394,6 @@ margin-right: -40px;
 @media screen and (max-width:1020px)   {
   .searchBox {
  display: inline;
- height: 50px;
  margin-left: -5px;
  font-size: 20px;
   }
@@ -401,7 +402,6 @@ margin-right: -40px;
   .searchBox {
  display: inline;
  width:400px;
- height: 50px;
  margin-left: -5px;
  font-size: 20px;
   }
@@ -409,7 +409,6 @@ margin-right: -40px;
 @media screen and (max-width:790px)   {
   .searchBox {
  display: inline;
- height: 50px;
  width:300px;
  margin-left: -5px;
  font-size: 18px;
@@ -419,7 +418,6 @@ margin-right: -40px;
   .searchBox {
  display: inline;
  width:300px;
- height: 50px;
  margin-left: -5px;
   }
 }
@@ -427,7 +425,6 @@ margin-right: -40px;
   .searchBox {
  display: inline;
  width:300px;
- height: 50px;
  margin-left: -5px;
  margin-right: 50px;
 
@@ -437,7 +434,6 @@ margin-right: -40px;
   .searchBox {
  display: inline;
  width:280px;
- height: 50px;
  margin-left:-5px;
  margin-right: 50px;
 }
@@ -446,7 +442,6 @@ margin-right: -40px;
   .searchBox {
  display: inline;
  width:280px;
- height: 50px;
  margin-left: -5px;
  margin-right: 50px;
 }
@@ -455,7 +450,6 @@ margin-right: -40px;
   .searchBox {
  display: inline;
  width:250px;
- height: 50px;
  margin-left: -5px;
  margin-right: 50px;
 }
@@ -468,7 +462,7 @@ margin-right: -40px;
 }
 .searchButton{
   width: 59px;
-  height:50px;
+  height:40px;
   border: 2px solid #15415C;
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
@@ -478,13 +472,12 @@ margin-right: -40px;
 @media screen and (max-width:1440px)   {
   .searchButton{
     margin-left:-80px;
-    height: 50px;
+    height: 40px;
   }
 }
 @media screen and (max-width:1020px)   {
   .searchButton{
     margin-left:-35px;
-    height: 50px;
   }
 }
 @media screen and (max-width:910px)   {
