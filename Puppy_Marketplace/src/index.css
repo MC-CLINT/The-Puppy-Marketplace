@@ -317,11 +317,6 @@ margin-right: -40px;
     margin-right:-45px;
   }
 }
-@media screen and (width:375px) {
-  .chevronDown{
-
-  }
-}
 @media screen and (width:360px) {
   .chevronDown{
   margin-right: -50px;

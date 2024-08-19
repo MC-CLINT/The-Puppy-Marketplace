@@ -7,14 +7,15 @@ import Logo2 from './assets/Logo 2.png';
 import UserImage from './assets/user.png';
 import Line5 from './assets/Line 5.png';
 import SearchImage from './assets/search.png';
-import CustomSlide from './Slide'; 
 import 'react-slideshow-image/dist/styles.css';
 import { Link } from 'react-router-dom';
+import DemoCarousel from './Slide';
+import CustomSlide from './Slider';
 
 function Home() {
     return (
         <div className='gradient-background'>
-            <div className='Nav-1'>
+            <div className='Nav-1 '>
                 <div className='leftside'>
                     <div className='leftside-section1'>
                         <img className='homeImage' src={homeImage} />
@@ -56,7 +57,9 @@ function Home() {
             </div>
 
             
-            <CustomSlide />
+            <DemoCarousel/>
+            <CustomSlide/>
+            
 
         </div>
     );

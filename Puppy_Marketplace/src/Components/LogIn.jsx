@@ -118,7 +118,9 @@ export function Component() {
       </div>
 
       <div className="flex justify-center">
-        <Button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl hover:bg-gray-700 flex items-center justify-center" type="submit">Log In</Button>
+      <Link to = 'user-dashboard'>
+        <button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl hover:bg-gray-700 flex items-center text-white justify-center" type="submit">Log In</button>
+      </Link>
       </div>
       <div>
         <p className="text-center">----------- or continue with -----------</p>
