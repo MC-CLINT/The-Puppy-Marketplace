@@ -56,11 +56,20 @@ app.use(logger);
 
 //serve the Homepage when the webapp opens
 app.get('/PuppyMarketPlace', async (req, res) => {
+    // try {
+    //     console.log('Hello champ');
+    //     const response = await axios.get(`${API_URL}/dogData`);
+    //     res.json(response.data);
+    // } catch (err) {
+    //     res.status(500).json({ message: 'Error fetching dogData' });
+    // }
     res.sendFile(path.join(distPath, 'index.html'));
+   
 });
 
 //serve registration page
 app.get('/PuppyMarketPlace/signup',async(req,res)=>{
+    //fine path res.send
     res.sendFile(path.join(distPath, 'index.html'));
    
 })
@@ -152,11 +161,12 @@ app.get("/user-dashboard",async(req,res)=>{
 
 
 //this is a local stratedgy that helps authenticate a user without having to login again 
-//used to maintain a session. do again later
+//used to maintain a session
 passport.use(new Strategy(async function verify(username,password,cb){
 
 }))
 app.listen(Port, () => {
     console.log(`Server running on port ${Port}`);
 });
+
 

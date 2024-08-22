@@ -95,3 +95,6 @@ app.delete('/message/:id',(req,res)=>{
 app.listen(Port,()=>{
     console.log(`Listening on port ${Port}`)
 })
+
+
+//would later include Bearer token for authentication
