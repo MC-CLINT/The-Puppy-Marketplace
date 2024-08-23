@@ -277,9 +277,9 @@ export function Component() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted');  // Add this line
+    console.log('Form submitted');  
     try {
-      const response = await axios.post('http://localhost:8000/PuppyMarketPlace/signup', formData);
+      const response = await axios.post('http://localhost:3000/PuppyMarketPlace/signup', formData);
       console.log(response.data);
       navigate('/user-dashboard');
     } catch (error) {
@@ -287,7 +287,11 @@ export function Component() {
       
     }
   };
-  
+  const handleGoogleOAuth = () => {
+    // Redirect to Google OAuth endpoint
+    window.location.href = 'http://localhost:3000/auth/google';
+  };
+
 
   return (
     <div className="max-w-md ml-2 md:ml-12 lg:ml-60 mx-auto p-6">
@@ -432,7 +436,10 @@ export function Component() {
           <p className="text-center">----------- or continue with -----------</p>
         </div>
         <div className="flex flex-row justify-between">
-          <img className="w-10 h-10" src={Google} alt="Google" />
+          {/* <img className="w-10 h-10" src={Google} alt="Google" /> */}
+          <button onClick={handleGoogleOAuth} className="w-10 h-10">
+            <img src={Google} alt="Google OAuth" />
+          </button>
           <img className="w-10 h-10" src={Facebook} alt="Facebook" />
           <img className="w-10 h-10" src={Instagram} alt="Instagram" />
         </div>

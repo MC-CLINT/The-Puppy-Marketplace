@@ -160,7 +160,7 @@ export default function LogIn() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/PuppyMarketPlace/login', {
+      const response = await axios.post('http://localhost:3000/PuppyMarketPlace/login', {
         email,
         password
       });
@@ -208,7 +208,7 @@ export default function LogIn() {
           <h1 className="text-sky-900 font-extrabold text-2xl">LOGIN</h1>
           <div>
             <div className="mb-2 block">
-              <label className="font-normal text-lg" htmlFor="email1">Username / Email</label>
+              <label className="font-normal text-lg" htmlFor="email1"> Email</label>
             </div>
             <div className="relative">
               <input
@@ -216,7 +216,7 @@ export default function LogIn() {
                 id="email1"
                 type="email"
                 name='email'
-                placeholder="Enter your username or email"
+                placeholder="Enter your  email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -251,13 +251,13 @@ export default function LogIn() {
             <button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl hover:bg-gray-700 flex items-center text-white justify-center" type="submit">Log In</button>
           </div>
           <div>
-            <p className="text-center">----------- or continue with -----------</p>
+            {/* <p className="text-center">----------- or continue with -----------</p> */}
           </div>
-          <div className="flex flex-row justify-between">
+          {/* <div className="flex flex-row justify-between">
             <img className="w-10 h-10" src={Google} alt="Google" />
             <img className="w-10 h-10" src={Facebook} alt="Facebook" />
             <img className="w-10 h-10" src={Instagram} alt="Instagram" />
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

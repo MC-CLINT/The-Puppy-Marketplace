@@ -10,6 +10,12 @@ import mail from '../assets/dashboard mail.png';
 
 
 export default function Nav() {
+  const handleSignOut = () => {
+    // Perform sign-out logic here, such as clearing session or tokens
+
+    // Redirect to the home page
+    window.location.href = '/signOut';
+  };
   return (
     <Navbar fluid rounded className="border border-lg w-auto mb-0 bg-white ">
       <Navbar.Brand className='w-auto '>
@@ -41,7 +47,7 @@ export default function Nav() {
           <Dropdown.Item>Settings</Dropdown.Item>
           <Dropdown.Item>Earnings</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          <Dropdown.Item as="button" onClick={handleSignOut}>Sign out</Dropdown.Item>
         </Dropdown>
       </div>
     </Navbar>

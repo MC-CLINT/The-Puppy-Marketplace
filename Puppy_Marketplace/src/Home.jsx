@@ -93,7 +93,7 @@ function Home() {
 
     useEffect(() => {
         // Fetch data from the backend endpoint when the component mounts
-        axios.get('http://localhost:8000/PuppyMarketPlace')
+        axios.get('http://localhost:3000/PuppyMarketPlace')
             .then(response => {
                 setData(response.data); // Store the fetched data in state
             })

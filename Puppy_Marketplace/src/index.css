@@ -661,6 +661,33 @@ margin-left: 25px;
 .Slide4-LineImage2{
   margin-left: 380px;
 }
+/* below is some styling i added to the form for proper error handling */
 
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
 
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
