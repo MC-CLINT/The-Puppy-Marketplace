@@ -25,11 +25,11 @@ const saltRounds=5;
 env.config();
 
 const db = new pg.Client({
-    user: process.env.PG_USER,
-    host: process.env.PG_HOST,
-    database: process.env.PG_DATABASE,
-    password: process.env.PG_PASSWORD,
-    port: process.env.PG_PORT,
+    user:"postgres",
+    host:"localhost",
+    database:"PuppyMarketPlace",
+    password:"@chim0t@",
+    port:"5000",
   });
   db.connect();
   const distPath = path.join(__dirname, '..', 'Puppy_marketplace', 'dist');
@@ -39,7 +39,7 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions))
 app.use(express.static(distPath));
 app.use(session({
-    secret:process.env.SESSION_SECRET,
+    secret:"TOPSECRETWORD",
     resave:false,
     saveUninitialized:true,
 }))
@@ -168,8 +168,8 @@ app.get("/auth/google/user-dashboard",passport.authenticate("google",{
 // }))
     //Google stratedgy
 passport.use("google",new GoogleStratedgy({
-    clientID:process.env.GOOGLE_CLIENT_ID,
-    clientSecret:process.env.GOOGLE_CLIENT_SECRET,
+    clientID:"357746756478-oli3pfugmqn30ndad0uki44or9gqc4na.apps.googleusercontent.com",
+    clientSecret:"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",
     callbackURL: "http://localhost:3000/auth/google/user-dashboard",
     userProfileURL: "https://www.googleapis.com/oauth2/v1/certs",
 },async(accessToken, refreshToken, profile, cb)=>{
