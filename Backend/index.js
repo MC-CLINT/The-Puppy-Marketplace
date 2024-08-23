@@ -10,22 +10,26 @@ import bcrypt from 'bcrypt';
 import session from 'express-session';
 import passport from 'passport';
 import { Strategy } from 'passport-local';
+import GoogleStratedgy from "passport-google-oauth2";
+import env from "dotenv";
+import { profile } from 'console';
 
 const app=express();
-const Port=8000;
+const Port=3000;
 const API_URL="http://localhost:4000";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const corsOptions = {
     origin: 'http://localhost:5173',
 };
 const saltRounds=5;
+env.config();
 
 const db = new pg.Client({
-    user: "postgres",
-    host: "localhost",
-    database: "PuppyMarketPlace",
-    password: "@chim0t@",
-    port: 5000,
+    user: process.env.PG_USER,
+    host: process.env.PG_HOST,
+    database: process.env.PG_DATABASE,
+    password: process.env.PG_PASSWORD,
+    port: process.env.PG_PORT,
   });
   db.connect();
   const distPath = path.join(__dirname, '..', 'Puppy_marketplace', 'dist');
@@ -35,7 +39,7 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions))
 app.use(express.static(distPath));
 app.use(session({
-    secret:"TOPSECRETWORD",
+    secret:process.env.SESSION_SECRET,
     resave:false,
     saveUninitialized:true,
 }))
@@ -150,12 +154,54 @@ app.get("/user-dashboard",async(req,res)=>{
     }
 })
 
+app.get("/auth/google",passport.authenticate("google",{
+    scope:["profile","email"],
+}))
 
+app.get("/auth/google/user-dashboard",passport.authenticate("google",{
+    successRedirect:"/user-dashboard",
+    failureRedirect:"/PuppyMarketPlace/login"
+}))
 //this is a local stratedgy that helps authenticate a user without having to login again 
 //used to maintain a session. do again later
-passport.use(new Strategy(async function verify(username,password,cb){
-
+// passport.use(new Strategy(async function verify(username,password,cb){
+// }))
+    //Google stratedgy
+passport.use("google",new GoogleStratedgy({
+    clientID:process.env.GOOGLE_CLIENT_ID,
+    clientSecret:process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/user-dashboard",
+    userProfileURL: "https://www.googleapis.com/oauth2/v1/certs",
+},async(accessToken, refreshToken, profile, cb)=>{
+console.log(profile)
+try{
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+        profile.email,
+      ]);
+      if(result.rows.length==0){
+        const newUser=await db.query(
+            "INSERT INTO users (username,email,password) VALUES ($1,$2,$3)",
+            [profile.given_name,profile.email,"google"]
+        )
+        cb(null,newUser.rows[0])
+      }else{
+        //user already exists
+        cb(null,result.rows[0])
+      }
+}catch(err){
+    cb(err)
+}
 }))
+//loggin out
+
+passport.serializeUser((user, cb) => {
+    cb(null, user);
+  });
+  
+  passport.deserializeUser((user, cb) => {
+    cb(null, user);
+  });
+
 app.listen(Port, () => {
     console.log(`Server running on port ${Port}`);
 });
