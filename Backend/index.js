@@ -66,7 +66,7 @@ function logger(req, res, next) {
 app.use(logger);
 
 //testing for vercel
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.redirect('/PuppyMarketPlace');
 });
 
