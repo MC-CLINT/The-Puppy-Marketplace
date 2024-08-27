@@ -433,16 +433,25 @@ export function Component() {
           
         </div>
         <div>
-          <p className="text-center">----------- or continue with -----------</p>
+          {/* <p className="text-center">----------- or continue with -----------</p> */}
         </div>
-        <div className="flex flex-row justify-between">
-          {/* <img className="w-10 h-10" src={Google} alt="Google" /> */}
+        {/* <div className="flex flex-row justify-between">
+      
           <button onClick={handleGoogleOAuth} className="w-10 h-10">
             <img src={Google} alt="Google OAuth" />
           </button>
-          <img className="w-10 h-10" src={Facebook} alt="Facebook" />
-          <img className="w-10 h-10" src={Instagram} alt="Instagram" />
-        </div>
+        
+        </div> */}
+        <div className="flex flex-col items-center">
+  <p className="mb-4">or continue with</p>
+  <div className="flex justify-center w-full">
+    <button onClick={handleGoogleOAuth} className="w-60 h-12 bg-gray-100 rounded-md flex items-center justify-center">
+      <img src={Google} alt="Google OAuth" className="w-8 h-8" />
+    </button>
+  </div>
+</div>
+
+        
       </form>
     </div>
   );

@@ -155,6 +155,8 @@ export default function LogIn() {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -168,9 +170,14 @@ export default function LogIn() {
       navigate('/user-dashboard');
     } catch (error) {
       // Handle error (e.g., show an error message)
-      console.error('Login failed,try signing up instead', error);
+      setErrorMessage('Login failed: Incorrect email or password.'); 
     }
   };
+  const handleGoogleOAuth = () => {
+    // Redirect to Google OAuth endpoint
+    window.location.href = 'http://localhost:3000/auth/google';
+  };
+
 
   return (
     <div className="flex flex-row">
@@ -206,6 +213,11 @@ export default function LogIn() {
       <div className="flex justify-center items-center min-h-screen">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 ml-10 md:ml-20 lg:ml-60 p-5 w-80 max-w-md mt-">
           <h1 className="text-sky-900 font-extrabold text-2xl">LOGIN</h1>
+          {errorMessage && (
+    <div className="text-red-500 text-center mb-4">
+      {errorMessage}
+    </div>
+  )}
           <div>
             <div className="mb-2 block">
               <label className="font-normal text-lg" htmlFor="email1"> Email</label>
@@ -258,6 +270,15 @@ export default function LogIn() {
             <img className="w-10 h-10" src={Facebook} alt="Facebook" />
             <img className="w-10 h-10" src={Instagram} alt="Instagram" />
           </div> */}
+          <div className="flex flex-col items-center">
+  <p className="mb-4">or continue with</p>
+  <div className="flex justify-center w-full">
+    <button onClick={handleGoogleOAuth} className="w-60 h-12 bg-gray-100 rounded-md flex items-center justify-center">
+      <img src={Google} alt="Google OAuth" className="w-8 h-8" />
+    </button>
+  </div>
+</div>
+
         </form>
       </div>
     </div>
