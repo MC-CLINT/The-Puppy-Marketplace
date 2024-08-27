@@ -24,14 +24,21 @@ const corsOptions = {
 const saltRounds=5;
 env.config();
 
-const db = new pg.Client({
-    user: process.env.PG_USER,
-    host: process.env.PG_HOST,
-    database: process.env.PG_DATABASE,
-    password: process.env.PG_PASSWORD,
-    port: process.env.PG_PORT,
-  });
-  db.connect();
+// const db = new pg.Client({
+//     user: process.env.PG_USER,
+//     host: process.env.PG_HOST,
+//     database: process.env.PG_DATABASE,
+//     password: process.env.PG_PASSWORD,
+//     port: process.env.PG_PORT,
+//   });
+//   db.connect();
+const { Pool } = pg;
+
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+})
+
+
   const distPath = path.join(__dirname, '..', 'Puppy_marketplace', 'dist');
 console.log(distPath)
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -82,7 +89,7 @@ app.post('/PuppyMarketPlace/signup', async (req, res) => {
         console.log('User Data:', { firstName, lastName, username, sex, email, phone, password });
 
         //checking if user already exist in the database
-        const checkResult=await db.query("SELECT * FROM users WHERE email = $1",[email])
+        const checkResult=await pool.query("SELECT * FROM users WHERE email = $1",[email])
         if (checkResult.rows.length > 0) {
             res.send("Email already exists. Try logging in.");
           }else{
@@ -91,7 +98,7 @@ app.post('/PuppyMarketPlace/signup', async (req, res) => {
                     console.log("Error hashing password:",err);
                 }else{
                     console.log("Hashed Password:",hash)
-                    await db.query(
+                    await pool.query(
                         "INSERT INTO users(email,password,contact_info,username) VALUES ($1,$2,$3,$4)",
                         [email,hash,phone,username]
                     )
@@ -118,7 +125,7 @@ app.post('/PuppyMarketPlace/login',async(req,res)=>{
     
     
   try {
-    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+    const result = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
     if (result.rows.length > 0) {
@@ -177,11 +184,11 @@ passport.use("google",new GoogleStratedgy({
 },async(accessToken, refreshToken, profile, cb)=>{
 console.log(profile)
 try{
-    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+    const result = await pool.query("SELECT * FROM users WHERE email = $1", [
         profile.email,
       ]);
       if(result.rows.length==0){
-        const newUser=await db.query(
+        const newUser=await pool.query(
             "INSERT INTO users (username,email,password) VALUES ($1,$2,$3)",
             [profile.given_name,profile.email,"google"]
         )
