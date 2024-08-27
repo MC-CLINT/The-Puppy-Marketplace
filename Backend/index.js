@@ -15,7 +15,7 @@ import env from "dotenv";
 import { profile } from 'console';
 
 const app=express();
-const Port=3000;
+const Port=process.env.Port;
 const API_URL="http://localhost:4000";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const corsOptions = {
