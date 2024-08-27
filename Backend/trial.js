@@ -87,7 +87,7 @@ app.post('/PuppyMarketPlace/signup', async (req, res) => {
         console.log('User Data:', { firstName, lastName, username, sex, email, phone, password });
 
         //checking if user already exist in the database
-        const checkResult=await db.query("SELECT * FROM users WHERE email = $1",[email])
+        const checkResult=await db.query("SELECT * FROM users WHERE email = $1", [email])
         if (checkResult.rows.length > 0) {
             res.send("Email already exists. Try logging in.");
           }else{
