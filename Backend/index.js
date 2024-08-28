@@ -15,7 +15,7 @@ import env from "dotenv";
 import { profile } from 'console';
 
 const app=express();
-const Port=process.env.Port;
+const Port=process.env.Port||3000;
 const API_URL="http://localhost:4000";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const corsOptions = {
@@ -66,9 +66,10 @@ function logger(req, res, next) {
 app.use(logger);
 
 //testing for vercel
-app.get('*', (req, res) => {
+app.get('*', async(req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
+
 
 //serve the Homepage when the webapp opens
 app.get('/PuppyMarketPlace', async (req, res) => {
