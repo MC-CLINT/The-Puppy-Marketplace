@@ -67,7 +67,7 @@ app.use(logger);
 
 //testing for vercel
 app.get('*', (req, res) => {
-  res.redirect('/PuppyMarketPlace');
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 //serve the Homepage when the webapp opens
