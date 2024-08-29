@@ -4,16 +4,20 @@
     {
       "src": "index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "Puppy_marketplace/dist/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/",
+      "src": "/api/(.*)",  
       "dest": "/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.js"
+      "src": "/(.*)",  
+      "dest": "/Puppy_marketplace/dist/index.html"
     }
   ]
 }
