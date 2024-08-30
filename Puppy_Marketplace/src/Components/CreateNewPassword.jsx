@@ -1,5 +1,5 @@
 import React from 'react';
-import Vector from '../assets/vector.png'; 
+import Vector from '../assets/Vector.png'; 
 import Securepadlock  from '../assets/Secure padlock.png';
 
 
