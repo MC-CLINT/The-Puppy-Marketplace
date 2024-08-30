@@ -51,7 +51,7 @@ function VerifyEmail() {
 
         {/* Verify Button */}
 
-        <Link to = 'verified'>
+        <Link to = '/verified'>
         <button
          className="w-32 mt-4 bg-sky-900 text-white py-2 px-6 rounded-2xl hover:bg-gray-700">
           Verify

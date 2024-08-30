@@ -51,7 +51,7 @@ function VerifyEmailForgotPassword () {
 
         {/* Verify Button */}
 
-        <Link to = 'create-new-password'>
+        <Link to = '/create-new-password'>
         <button
          className="w-32 mt-4 bg-sky-900 text-white py-2 px-6 rounded-2xl hover:bg-gray-700">
           Verify

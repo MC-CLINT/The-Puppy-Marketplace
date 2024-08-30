@@ -1,6 +1,6 @@
 import React from 'react';
 import PadlockImage from '../assets/padlock 1.png';
-import Vector from '../assets/vector.png'; 
+import Vector from '../assets/Vector.png'; 
 import { Link } from 'react-router-dom'
 
 
@@ -29,7 +29,7 @@ function ForgotPassword() {
         </div>
 
         <div className="flex justify-center mt-6">
-        <Link to = 'verify-email-forgotpassword'>
+        <Link to = '/verify-email-forgotpassword'>
           <button className="w-32 bg-sky-900 text-white py-2 rounded-2xl hover:bg-gray-700">
             Send
           </button>

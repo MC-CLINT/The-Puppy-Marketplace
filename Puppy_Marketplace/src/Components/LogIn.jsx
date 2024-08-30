@@ -110,15 +110,15 @@ export function Component() {
           <img className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400 h-6 w-6"  src={lock}/>
         </div>
         <div className="flex justify-end mb-6">
-        <Link to = 'forgot-password'>
-        <p className="text-xs font-normal">Forgot Password ?</p>
+        <Link to = '/forgot-password'>
+        <p className="text-sm font-normal hover:text-sky-900">Forgot Password ?</p>
         </Link>
         </div>
         
       </div>
 
       <div className="flex justify-center">
-      <Link to = 'user-dashboard'>
+      <Link to = '/user-dashboard'>
         <button className="bg-sky-900 w-32 h-10 font-semibold mb-2 rounded-2xl hover:bg-gray-700 flex items-center text-white justify-center" type="submit">Log In</button>
       </Link>
       </div>

@@ -8,6 +8,7 @@ import SellPuppies from './SellPuppies';
 
 
 export default function Dashboard() {
+ 
   return (
     <>
         <Nav/>
@@ -31,5 +32,8 @@ export default function Dashboard() {
         
         
     </>
-  )
+  );
 }
+
+
+

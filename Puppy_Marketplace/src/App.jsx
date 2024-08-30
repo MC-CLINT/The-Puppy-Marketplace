@@ -17,13 +17,18 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/login/forgot-password" element={<ForgotPassword />} />
-        <Route path="/login/forgot-password/verify-email-forgotpassword" element={<VerifyEmailForgotPassword />} />
-        <Route path="/login/forgot-password/verify-email-forgotpassword/create-new-password" element={<CreateNewPassword />} />
-        <Route path="/login/user-dashboard" element={<Dashboard />} />
-        <Route path="/signup/verify-email" element={<VerifyEmail />} />
-        <Route path="/signup/verify-email/verified" element={<Verified />} />
-        <Route path="/signup/verify-email/verified/user-dashboard" element={<Dashboard />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/verify-email-forgotpassword" element={<VerifyEmailForgotPassword />} />
+        <Route path="/create-new-password" element={<CreateNewPassword />} />
+        <Route path="/user-dashboard" element={<Dashboard />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/verified" element={<Verified />} />
+      
+      
+        
+      
+       
+        
 
         
 

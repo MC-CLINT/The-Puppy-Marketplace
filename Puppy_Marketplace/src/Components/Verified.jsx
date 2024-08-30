@@ -11,7 +11,7 @@ function Verified() {
       </div>
       <h2 className="text-3xl font-bold text-black">Verified!</h2>
       <p className="text-black mt-4">Hurray! Your account has been successfully verified</p>
-      <Link to = 'user-dashboard'>
+      <Link to = '/user-dashboard'>
       <button className="mt-6 bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700">
         Continue To Dashboard
       </button>

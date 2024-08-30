@@ -2,11 +2,11 @@
 import menu from '../assets/menu.png'
 import Logo from '../assets/logo.png';
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-import { RiNotification4Line } from "react-icons/ri";
-import { TiMessages } from "react-icons/ti";
 import bell from '../assets/bell.png'
 import logo from '../assets/logo 2.png';
 import mail from '../assets/dashboard mail.png';
+import { Link } from 'react-router-dom'
+
 
 
 export default function Nav() {
@@ -14,7 +14,9 @@ export default function Nav() {
     <Navbar fluid rounded className="border border-lg w-auto mb-0 bg-white ">
       <Navbar.Brand className='w-auto '>
         <img src={menu} alt="logo" className="w-7 h-7 ml-5" />
-        <img src={logo} alt="logo" className="w-10 h-10 mr-2 ml-6" />
+        <Link to = '/'>
+        <img src={logo} alt="logo" className="w-10 h-10 mr-2 ml-6 hover:bg-sky-900" />
+        </Link>
         <span className="text-lg font-bold text-sky-900">PUPPY MARKETPLACE</span>
       </Navbar.Brand>
       <div className="flex items-center space-x-4">

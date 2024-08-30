@@ -47,11 +47,11 @@ function Home() {
                 <img className='UserImage' src={UserImage} />
                 </Link>
                 <Link to = 'login'>
-                    <p className='SignIn'>Sign In</p>
+                    <p className='SignIn hover:text-sky-900'>Sign In</p>
                 </Link>
                 <img className='Line5' src={Line5} />
                 <Link to = 'signup'>
-                    <p className='Register'>Register</p>
+                    <p className='Register hover:text-sky-900'>Register</p>
                 </Link>
 
             </div>

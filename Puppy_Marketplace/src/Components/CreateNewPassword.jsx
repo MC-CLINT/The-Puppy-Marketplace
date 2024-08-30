@@ -1,6 +1,7 @@
 import React from 'react';
-import Vector from '../assets/vector.png'; 
+import Vector from '../assets/Vector.png'; 
 import Securepadlock  from '../assets/Secure padlock.png';
+import { Link } from 'react-router-dom'
 
 
 
@@ -27,7 +28,9 @@ function CreateNewPassword () {
                 <input type="password" id="confirm-password" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-900"/>
             </div>
             <div className="flex justify-center mt-6">
+            <Link to = '/login'>
             <button type="submit" class="w-32 py-2 bg-sky-900 text-white font-semibold rounded-2xl hover:bg-gray-700 focus:outline-none">Save</button>
+            </Link>
             </div>
         </form>
     </div>
