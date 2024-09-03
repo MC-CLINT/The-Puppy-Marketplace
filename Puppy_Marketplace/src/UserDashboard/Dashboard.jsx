@@ -5,6 +5,7 @@ import MyCart from './Mycart';
 import NewOrders from './NewOrders';
 import RecentActivity from './Recentactivity';
 import SellPuppies from './SellPuppies';
+import RecentlyViewed from './RecentlyViewed';
 
 
 export default function Dashboard() {
@@ -26,9 +27,16 @@ export default function Dashboard() {
             <div className="col-span-2 md:col-span-2 lg:col-span-2">
                 <RecentActivity />
             </div>
+
             <SellPuppies />
         </div>
+        
         </div>
+
+        
+        <div>
+        <RecentlyViewed />
+        </div> 
         
         
     </>
