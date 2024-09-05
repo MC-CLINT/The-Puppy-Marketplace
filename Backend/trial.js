@@ -20,14 +20,22 @@ const corsOptions = {
 };
 const saltRounds=5;
 
-const db = new pg.Client({
-    user: "postgres",
-    host: "localhost",
-    database: "PuppyMarketPlace",
-    password: "@chim0t@",
-    port: 5000,
-  });
-  db.connect();
+
+const { Pool } = pg;
+
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+})
+// const db = new pg.Client({
+//     user: process.env.PG_USER,
+//     host: process.env.PG_HOST,
+//     database: process.env.PG_DATABASE,
+//     password: process.env.PG_PASSWORD,
+//     port: process.env.PG_PORT,
+//   });
+//   db.connect();
+
+
   const distPath = path.join(__dirname, '..', 'Puppy_marketplace', 'dist');
 console.log(distPath)
 app.use(bodyParser.urlencoded({ extended: true }));

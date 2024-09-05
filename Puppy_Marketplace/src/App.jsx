@@ -17,9 +17,12 @@ function App() {
         <Route path="/PuppyMarketPlace" element={<Home />} />
         <Route path="/PuppyMarketPlace/signup" element={<SignUp />} />
          <Route path="/PuppyMarketPlace/login" element={<LogIn />} /> 
+         <Route path="/PuppyMarketPlace/signup/verifyEmail" element={<VerifyEmail />} /> 
+         <Route path="/PuppyMarketPlace/signup/verifyEmail/Verified" element={<Verified />} /> 
+         <Route path="//PuppyMarketPlace/signup/verifyEmail/Verified/user-dashboard" element={<Dashboard />} />
+         <Route path="/user-dashboard" element={<Dashboard />} />
         {/* <Route path="/login/forgot-password" element={<ForgotPassword />} />
         <Route path="/login/forgot-password/verify-email-forgotpassword" element={<VerifyEmailForgotPassword />} /> */}
-       <Route path="/user-dashboard" element={<Dashboard />} />
         {/* <Route path="/signup/verify-email" element={<VerifyEmail />} />
          <Route path="/login/forgot-password/verify-email-forgotpassword/create-new-password" element={<CreateNewPassword />} />
         <Route path="/signup/verify-email/verified" element={<Verified />} />  */}

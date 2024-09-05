@@ -281,7 +281,7 @@ export function Component() {
     try {
       const response = await axios.post('http://localhost:3000/PuppyMarketPlace/signup', formData);
       console.log(response.data);
-      navigate('/user-dashboard');
+      navigate('/PuppyMarketPlace/signup/verifyEmail',{ state: { email: formData.email } });
     } catch (error) {
       console.error(error);
       
