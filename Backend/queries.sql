@@ -40,11 +40,6 @@ CREATE TABLE PuppyListings (
     FOREIGN KEY (seller_id) REFERENCES Sellers(seller_id)
 );
 
-CREATE TABLE Buyers (
-    buyer_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE,  -- Each buyer corresponds to a unique user
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
-);
 
 CREATE TABLE Sellers (
     seller_id SERIAL PRIMARY KEY,
@@ -53,4 +48,11 @@ CREATE TABLE Sellers (
 );
 
 
-
+Dogs
+1) Breed :corgi puppy,
+   Puppy_name:puk,
+   image_url:https://mymodernmet.com/wp/wp-content/uploads/2020/10/cooper-baby-corgi-dogs-8.jpg,
+   Price:$15.00,
+   description:Adorable Corgi puppy with a charming personality and distinctive short legs.
+    At just 12 weeks old, this pup is playful, friendly, and loves to be around people. Known for its intelligence and easygoing nature, it’s great with kids and other pets. With a sturdy build and a fluffy coat, this Corgi is both cute and clever,
+     making it a perfect addition to any family.

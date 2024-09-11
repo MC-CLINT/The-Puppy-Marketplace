@@ -22,7 +22,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const corsOptions = {
     origin: 'http://localhost:5173',
 };
-const saltRounds=5;
+const saltRounds=10;
 env.config();
 //configuration for nodemailer
 const transporter = nodemailer.createTransport({
