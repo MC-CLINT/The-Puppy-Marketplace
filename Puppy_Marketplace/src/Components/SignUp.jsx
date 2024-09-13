@@ -218,20 +218,23 @@ import Instagram from '../assets/Instagram.png';
 
 
 export default function SignUp() {
+  const navigateToHome=()=>{
+    window.location.href='/PuppyMarketPlace'
+  }
   return (
     <div className="flex flex-row">
       <div className="hidden sm:flex flex-col custom-width bg-sky-900 p-5 justify-between text-center">
         <div className="text-white">
           <div className="flex flex-row justify-between">
             <div>
-              <img className='h-[25px] w-[25px]' src={logo32} alt="Logo" />
+              <img className='h-[25px] w-[25px]' src={logo32} alt="Logo"  onClick={navigateToHome} style={{cursor:'pointer'}}/>
             </div>
             <div>
               <p className="text-sm font-extrabold">PUPPY</p>
               <p className="text-sm font-extrabold">MARKETPLACE</p>
             </div>
             <div>
-              <img className='h-[25px] w-[25px]' src={logo32} alt="Logo" />
+              <img className='h-[25px] w-[25px]' src={logo32} alt="Logo" onClick={navigateToHome} style={{cursor:'pointer'}} />
             </div>
           </div>
           <p className="text-yellow-400">...................................................</p>
@@ -267,7 +270,8 @@ export function Component() {
     password: '',
     confirmPassword: ''
   });
-
+  const [errorMessage, setErrorMessage] = useState('');
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -283,7 +287,9 @@ export function Component() {
       console.log(response.data);
       navigate('/PuppyMarketPlace/signup/verifyEmail',{ state: { email: formData.email } });
     } catch (error) {
-      console.error(error);
+      if(error.response && error.response.status===400){
+        setErrorMessage(error.response.data.message)
+      }
       
     }
   };
@@ -432,6 +438,7 @@ export function Component() {
              </Button>
           
         </div>
+        {errorMessage && <p  style={{color:'red',display:'flex',  flexDirection:'column',alignItems:'center'}}>{errorMessage}</p>}
         <div>
           {/* <p className="text-center">----------- or continue with -----------</p> */}
         </div>

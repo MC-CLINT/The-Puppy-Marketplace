@@ -10,6 +10,9 @@ import mail from '../assets/dashboard mail.png';
 
 
 export default function Nav() {
+  const navigateToHome=()=>{
+    window.location.href='/PuppyMarketPlace'
+  }
   const handleSignOut = () => {
     // Perform sign-out logic here, such as clearing session or tokens
 
@@ -20,7 +23,7 @@ export default function Nav() {
     <Navbar fluid rounded className="border border-lg w-auto mb-0 bg-white ">
       <Navbar.Brand className='w-auto '>
         <img src={menu} alt="logo" className="w-7 h-7 ml-5" />
-        <img src={logo} alt="logo" className="w-10 h-10 mr-2 ml-6" />
+        <img src={logo} alt="logo" className="w-10 h-10 mr-2 ml-6"  onClick={navigateToHome} style={{cursor: 'pointer' }}/>
         <span className="text-lg font-bold text-sky-900">PUPPY MARKETPLACE</span>
       </Navbar.Brand>
       <div className="flex items-center space-x-4">

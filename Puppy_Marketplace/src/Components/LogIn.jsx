@@ -158,6 +158,9 @@ export default function LogIn() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const navigate = useNavigate();
+  const navigateToHome=()=>{
+    window.location.href='/PuppyMarketPlace'
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -185,14 +188,14 @@ export default function LogIn() {
         <div className="text-white">
           <div className="flex flex-row justify-between">
             <div>
-              <img className='h-[25px] w-[25px]' src={logo32} alt="Logo" />
+              <img className='h-[25px] w-[25px]' src={logo32} alt="Logo" onClick={navigateToHome} style={{cursor:'pointer'}} />
             </div>
             <div>
               <p className="text-sm font-extrabold">PUPPY</p>
               <p className="text-sm font-extrabold">MARKETPLACE</p>
             </div>
             <div>
-              <img className='h-[25px] w-[25px]' src={logo32} alt="Logo" />
+              <img className='h-[25px] w-[25px]' src={logo32} alt="Logo" onClick={navigateToHome} style={{cursor:'pointer'}} />
             </div>
           </div>
           <p className="text-yellow-400">...................................................</p>
